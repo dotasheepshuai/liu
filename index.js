@@ -162,6 +162,10 @@ print(SW.socialWorker[random(0, 1)]);
 SW.resourse = ["policy", "volunteer", "fundation"];
 //添加新的属性之后要重新print哈
 print(SW);
+print(SW);
+print(SW);
+print(SW);
+print(SW);
 
 
 
