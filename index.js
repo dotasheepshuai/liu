@@ -34,6 +34,7 @@ function selectBeauty() {
     weight: getWeight(),
     cup: getCup(),
     gpa: getGpa(),
+    name: getName(),
   };
 }
 
@@ -59,5 +60,21 @@ function getGpa() {
   return random(0, 100);
 }
 
+// 需求：姓：赵钱孙李周吴郑王 名：lily,rose,flower,river,sheep,lion,hydrangea,cloud
+
+function getName() {
+  const fisrtName = ['lily', 'rose', 'flower', 'river', 'sheep', 'lion', 'hydrangea', 'cloud'];
+  const randomIndex1 = random(0, fisrtName.length - 1);
+  const lastName = [' zhao', ' qian', ' sun', ' lee', ' zhou', ' wu', ' zheng', ' wang'];
+  const randomIndex2 = random(0, lastName.length - 1);
+  
+  return name = fisrtName[randomIndex1] + lastName[randomIndex2];
+
+}
+
+
 const beauty1 = selectBeauty();
 print(beauty1);
+
+
+print("tianyang是傻子")
