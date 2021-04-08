@@ -168,6 +168,7 @@ print(SW);
 const pickedSW = pick(SW, ["skillsOfIntervention", "socialWorker"]);
 //这要打引号的哈//给我选出来的起个名
 print(pickedSW);
+print(pickedSW);
 
 // version control
 // git
