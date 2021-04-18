@@ -1,4 +1,4 @@
-const { uniq, min, random, sum, pick } = require('lodash'); // unique
+const { uniq, min, random, sum, pick } = require('lodash');
 
 function print(something, count = 1) {
   for (let i = 0; i < count; i++) {
@@ -19,7 +19,17 @@ function selectBeauty() {
 }
 
 function getAge() {
-  return random(16, 20);
+  const beautyAge = random(16, 40);
+  const olderThanYangyang = beautyAge >= 28;
+ 
+  if (olderThanYangyang) {
+    print("I am older than yangyang.");
+
+  } else {
+    print("I am younger than yangyang.");
+  }
+  
+  return beautyAge;
 }
 
 function getHeight() {
@@ -31,9 +41,22 @@ function getWeight() {
 }
 
 function getCup() {
-  const cupOptions = ['B', 'C', 'D', 'E'];
+  const cupOptions = ['A', 'B', 'C', 'D', 'E'];
   const randomIndex = random(0, cupOptions.length - 1);
-  return cupOptions[randomIndex];
+  const cup = cupOptions[randomIndex];
+
+  if (cup === 'A') {
+    print('I am small.');
+
+  } else if ((cup === 'B') || (cup === 'C') || (cup === 'D'))  {
+    print('I am middle.');
+
+  } else {
+    print('I am big.');
+    
+  }
+
+   return cup;
 }
 
 function getGpa() {
@@ -43,12 +66,12 @@ function getGpa() {
 // 需求：姓：赵钱孙李周吴郑王 名：lily,rose,flower,river,sheep,lion,hydrangea,cloud
 
 function getName() {
-  const firstName = ['lily', 'rose', 'flower', 'river', 'sheep', 'lion', 'hydrangea', 'cloud', 'dudu', 'yangyang'];
-  const firstNameIndex = random(0, firstName.length - 1);
-  const lastName = ['zhao', 'qian', 'sun', 'lee', 'zhou', 'wu', 'zheng', 'wang'];
-  const lastNameIndex = random(0, lastName.length - 1);
+  const firstNames = ['Lily', 'Rose', 'Flower', 'River', 'Sheep', 'Lion', 'Hydrangea', 'Cloud', 'Dudu', 'Yangyang'];
+  const firstNamesIndex = random(0, firstNames.length - 1);
+  const lastNames = ['Zhao', 'Qian', 'Sun', 'Lee', 'Zhou', 'Wu', 'Zheng', 'Wang'];
+  const lastNamesIndex = random(0, lastNames.length - 1);
   
-  const name =firstName[firstNameIndex] + ' ' + lastName[lastNameIndex];
+  const name = firstNames[firstNamesIndex] + ' ' + lastNames[lastNamesIndex];
   return name;
 
 }
@@ -70,27 +93,33 @@ function getName() {
 //   const threshold = 30;
 // const a = randomNumber > threshold;
 
+// function request() {
+//   const theNeed = 
+// }
+
+
+
 
 function getHasBoyfriend() {
+  const hasBoyfriendPercentage = 60;
 
-  const randomNumber = random(1, 100);
-  const threshold = 30;
-  const a = randomNumber > threshold;
+  const randomPercentage = random(1, 100);
+  const hasBoyfriend = randomPercentage <= hasBoyfriendPercentage;
 
-  if (a) {
-    return("i have a boyfriend !");
+  if (hasBoyfriend) {
+    print("I have a boyfriend!");
+    print("I don't belong to yangyang.");
 
   } else {
-    return("i don't have a boyfriend!" );
+    print("I don't have a boyfriend!" + "\n" + "I belong to yangyang.");
   }
+
+  return hasBoyfriend;
 }
 
 
 /**
- * homework1: 30% hasBoyfriend is true
- * homework2: 40% hasBoyfriend is true
- * homework3: if hasBoyfriend is true, print "i have a boyfriend !". if hasBoyfriend is false, print "i don't have a boyfriend!" 
- * homework4: improve the code to make it as readible as possible.
+ * homework3: if hasBoyfriend is true, print "i have a boyfriend !", in a separate line , print "print "i have a boyfriend !"". if hasBoyfriend is false, print "i don't have a boyfriend!" 
  */
 
 
