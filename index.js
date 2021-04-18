@@ -16,3 +16,4 @@ function printBeauty(beautyName) {
   const beauty = selectBeauty();
   print(beauty);
 }
+
