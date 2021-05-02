@@ -4,16 +4,16 @@ const { selectBeauty } = require('./selectBeauty');
 main();
 
 function main() {
-  printBeauty('beauty1');  
-  print('\n');
-  printBeauty('beauty2'); 
-  print('\n');
-  printBeauty('beauty3'); 
+  audition();
 }
 
-function printBeauty(beautyName) {
-  print(beautyName);
-  const beauty = selectBeauty();
-  print(beauty);
+function audition(count){
+  for (let i = 1; i <= 5; i++) {
+    printBeauty("beauty" + i);
+  }
 }
 
+function printBeauty(beatyName) {
+  const a = selectBeauty();
+  print(a);
+}
