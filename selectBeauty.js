@@ -22,10 +22,10 @@ function getAge() {
   const olderThanYangyang = beautyAge >= 28;
  
   if (olderThanYangyang) {
-    print("I am older than yangyang.");
+    // print("I am older than yangyang.");
 
   } else {
-    print("I am younger than yangyang.");
+    // print("I am younger than yangyang.");
   }
   
   return beautyAge;
@@ -45,13 +45,13 @@ function getCup() {
   const cup = cupOptions[randomIndex];
 
   if (cup === 'A') {
-    print('I am small.');
+    // print('I am small.');
 
   } else if ((cup === 'B') || (cup === 'C') || (cup === 'D'))  {
-    print('I am middle.');
+    // print('I am middle.');
 
   } else {
-    print('I am big.');
+    // print('I am big.');
   }
 
   return cup;
@@ -79,11 +79,11 @@ function getHasBoyfriend() {
   const hasBoyfriend = randomPercentage <= hasBoyfriendPercentage;
 
   if (hasBoyfriend) {
-    print("I have a boyfriend!");
-    print("I don't belong to yangyang.");
+    // print("I have a boyfriend!");
+    // print("I don't belong to yangyang.");
 
   } else {
-    print("I don't have a boyfriend!" + "\n" + "I belong to yangyang.");
+    // print("I don't have a boyfriend!" + "\n" + "I belong to yangyang.");
   }
 
   return hasBoyfriend;
