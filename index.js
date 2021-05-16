@@ -10,54 +10,23 @@ function main() {
 function audition() {
   let beauties = [];
   
-  for (let i = 1; i <= 1000000; i++) {
+  for (let i = 1; i <= 100000; i++) {
     const beauty = selectBeauty();
     beauties.push(beauty);
   }
 
-  print(beauties.length);
+  print("How many beauties we generated: " + beauties.length);
 
-  beauties = beauties.filter(
-    (beauty) => { 
-      return beauty.cup === 'C'; 
-    }
-  );
-  print(beauties.length);
+  beauties = beauties
+  .filter((beauty) => (beauty.cup === "C"))
+  .filter((beauty) => (beauty.height === "160cm"))
+  .filter((beauty) => (beauty.weight === "52kg"))
+  .filter((beauty) => (beauty.age === 21))
+  .filter((beauty) => (beauty.hasBoyfriend === false))
+  .filter((beauty) => (beauty.name === "Dudu Wang"))
+  .sort((beauty1, beauty2) => (beauty2.gpa - beauty1.gpa));
 
-  beauties = beauties.filter(
-    (beauty) => {
-      return beauty.height === "160cm";
-    }
-  );
-  print(beauties.length);
-  
-  beauties = beauties.filter(
-    (beauty) => {
-      return beauty.weight === "52kg";
-    }
-  );
-  print(beauties.length);
-  
-  beauties = beauties.filter(
-    (beauty) => {
-      return beauty.age === 21;
-    }
-  );
-  print(beauties.length);
+  print("We got " + beauties.length + " beauties left after several filtering.");
 
-  beauties = beauties.filter(
-    (beauty) => {
-      return beauty.hasBoyfriend === false;
-    }
-  );
-  print(beauties.length);
-
-  beauties = beauties.filter(
-    (beauty) => {
-      return beauty.name === "Dudu Wang";
-    }
-  );
-  print(beauties.length);
-
-  print(beauties);
+  print("The winner is " + JSON.stringify(beauties[0]));
 }

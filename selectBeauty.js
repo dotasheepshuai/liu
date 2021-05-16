@@ -18,7 +18,7 @@ function selectBeauty() {
 }
 
 function getAge() {
-  const beautyAge = random(16, 40);
+  const beautyAge = random(18, 24);
   const olderThanYangyang = beautyAge >= 28;
  
   if (olderThanYangyang) {
@@ -32,15 +32,15 @@ function getAge() {
 }
 
 function getHeight() {
-  return random(156, 168) + 'cm';
+  return random(158, 162) + 'cm';
 }
 
 function getWeight() {
-  return random(46, 58) + 'kg';
+  return random(50, 54) + 'kg';
 }
 
 function getCup() {
-  const cupOptions = ['A', 'B', 'C', 'D', 'E'];
+  const cupOptions = ['B', 'C', 'D'];
   const randomIndex = random(0, cupOptions.length - 1);
   const cup = cupOptions[randomIndex];
 
@@ -62,9 +62,9 @@ function getGpa() {
 }
 
 function getName() {
-  const firstNames = ['Lily', 'Rose', 'Flower', 'River', 'Sheep', 'Lion', 'Hydrangea', 'Cloud', 'Dudu', 'Yangyang'];
+  const firstNames = ['Sheep', 'Dudu', 'Yangyang'];
   const firstNamesIndex = random(0, firstNames.length - 1);
-  const lastNames = ['Zhao', 'Qian', 'Sun', 'Lee', 'Zhou', 'Wu', 'Zheng', 'Wang'];
+  const lastNames = ['Zhao', 'Sun', 'Wang'];
   const lastNamesIndex = random(0, lastNames.length - 1);
   
   const name = firstNames[firstNamesIndex] + ' ' + lastNames[lastNamesIndex];
