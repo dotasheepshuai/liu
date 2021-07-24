@@ -1,45 +1,20 @@
-const { print } = require('./print');
-const { selectBeauty } = require('./selectBeauty');
+const { loveLetter } = require('./features/loveLetter');
 
 main();
 
 function main() {
-  audition();
+  loveLetter();
 }
 
-function audition() {
-  const beauties = generateBeauties();
-  const filteredBeauties = filterBeauties(beauties); 
-  printWinnerBeauty(filteredBeauties);
-}
+// 选美大赛功能
+// Task1.1: 将选美大赛女生人数改成1万个。
+// Task1.2: 将选美大赛过滤条件有没有男朋友移除掉。
+// Task1.3: 产生美女的时候，身高在140-200cm间随机取值。
+// Task1.4: 选美大赛是基于selectBeauty的第一个feature，为了开始写第二个feature，请将audition refactor到另外一个文件
 
-function generateBeauties() {
-  const beauties = [];
-  for (let i = 1; i <= 100000; i++) {
-    const beauty = selectBeauty();
-    beauties.push(beauty);
-  }
+// 情书功能
+// Task2.1: 我们开始做第二个feature。情书功能。请创建一个文件，叫做loveLetter.js
+// Task2.2: 在loveLetter里创建一个loveLetter函数，这个函数会产生一个美女，并且print出来。请在main里使用loveLetter函数，并且删掉audition函数，因为我们先把选美比赛功能放一边儿。
+// Task2.3：请写一个函数，根据美女的信息，表达对她的爱意。
 
-  print("How many beauties we generated: " + beauties.length);
-  return beauties;
-}
-
-function filterBeauties(beauties) {
-  const filteredBeauties = beauties
-  .filter((beauty) => (beauty.cup === "C"))
-  .filter((beauty) => (beauty.height === "160cm"))
-  .filter((beauty) => (beauty.weight === "52kg"))
-  .filter((beauty) => (beauty.age === 21))
-  .filter((beauty) => (beauty.hasBoyfriend === false))
-  .filter((beauty) => (beauty.name === "Dudu Wang"))
-  .sort((beauty1, beauty2) => (beauty2.gpa - beauty1.gpa));
-
-  print("We got " + filteredBeauties.length + " beauties left after several rounds of filtering.");
-  return filteredBeauties;
-}
-
-function printWinnerBeauty(beauties) {
-   const winnerBeauty = beauties[0];
-   print("The winner is " + JSON.stringify(winnerBeauty));
-   return;
-}
+// 个人信息 天气 嘘寒问暖 每天 动态

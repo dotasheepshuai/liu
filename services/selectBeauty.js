@@ -1,5 +1,5 @@
 const { random } = require('lodash');
-const { print } = require('./print');
+const { print } = require('../utils/print');
 
 module.exports = {
  selectBeauty
@@ -32,7 +32,7 @@ function getAge() {
 }
 
 function getHeight() {
-  return random(158, 162) + 'cm';
+  return random(140, 200) + 'cm';
 }
 
 function getWeight() {
