@@ -27,3 +27,9 @@ async function main() {
 // 问题：怎么只给没有男朋友的发情书？
 
 // Task 3.1 populateDatabase
+
+
+// 7.30练习
+// 练习一：使用futureWeather函数提取其中的信息并且写成关心的话
+// 练习二：通过更多的数据库的采样，了解天气都会返回哪些值，然后使用if-else填写更为个性化的关心的话
+// 练习三：通过让主函数连接到feature-populateDatabase，从而在数据库中加入100个元素，然后里面的地理位置更加多元化
