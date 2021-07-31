@@ -36,7 +36,7 @@ function selfInroduction(){
 }
 
 function theReasons(beauty){
- return("听说你身高" + beauty.height +"体重" + beauty.weight + "。" + "刚好是我心仪的样子,嘻嘻。");
+ return("因为你的资料上显示，你的身高是" + beauty.height + "再配上你的体重" + beauty.weight + "是我非常欣赏的健康身材。");
 }
 
 function theProposal(beauty){
@@ -45,9 +45,9 @@ function theProposal(beauty){
     if (beauty.gpa >= 70) {
    proposal = "况且你成绩有" + beauty.gpa + "，" + "因此我想向你学习。";
 
-  } else {
+   } else {
     proposal = "能给我一个机会一起和你成长吗？";
-  }
+   }
 
  return proposal;
 }

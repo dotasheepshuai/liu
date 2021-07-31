@@ -33,7 +33,7 @@ function filterBeauties(beauties) {
   .filter((beauty) => (beauty.height === "160cm"))
   .filter((beauty) => (beauty.weight === "52kg"))
   .filter((beauty) => (beauty.age === 21))
-  //.filter((beauty) => (beauty.hasBoyfriend === false))
+  // .filter((beauty) => (beauty.hasBoyfriend === false))
   .filter((beauty) => (beauty.name === "Dudu Wang"))
   .sort((beauty1, beauty2) => (beauty2.gpa - beauty1.gpa));
 
