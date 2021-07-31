@@ -1,25 +1,29 @@
 const { random } = require('lodash');
 const { print } = require('../utils/print');
-const { selectBeauty } = require('../services/selectBeauty');
+// const { selectBeauty } = require('../services/selectBeauty');
+const { db_query } = require('../db/db');
+const { db_list } = require('../db/db');
+const { getWeather, getFutureWeather } = require('../services/weather');
 
 module.exports = {
  loveLetter
 }
 
 
-
-function loveLetter() {
+async function loveLetter() {
   print(" 我们正在运行情书功能哟。");
 
-  const beauty = selectBeauty();
+ const beautyId = (await db_list())[3];
+ const beauty = await db_query(beautyId);
   print(beauty);
 
   print(sayHi(beauty));
   print(selfInroduction());
   print(theReasons(beauty));
   print(theProposal(beauty));
- 
-
+  print(await theCaring(beauty));
+  // const future = await getFutureWeather('Beijing');
+  // print(future);
 }
 
 //1. function 打招呼
@@ -42,7 +46,7 @@ function theReasons(beauty){
 function theProposal(beauty){
   let proposal;
 
-    if (beauty.gpa >= 70) {
+    if (beauty.gpa >= 80) {
    proposal = "况且你成绩有" + beauty.gpa + "，" + "因此我想向你学习。";
 
    } else {
@@ -50,4 +54,22 @@ function theProposal(beauty){
    }
 
  return proposal;
+}
+
+async function theCaring(beauty){
+  const girlCity = beauty.hometown;
+  const girlWeather = await getWeather(girlCity);
+  const usefulMessage = girlWeather.weather[0].description;
+  //print(usefulMessage);
+
+  let caringWords = "刚刚查了你们那里的天气是" + usefulMessage + "。" ;
+
+  if (usefulMessage == '多云') {
+     caringWords+= "可能会下雨记得带伞哟。" ;
+
+   } else {
+     caringWords+= "如果太阳很大就避免暴晒小心中暑。";
+   }
+
+ return caringWords;
 }

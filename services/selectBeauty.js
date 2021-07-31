@@ -1,4 +1,5 @@
 const { random } = require('lodash');
+const { v4: uuidv4 } = require('uuid');
 const { print } = require('../utils/print');
 
 module.exports = {
@@ -7,6 +8,7 @@ module.exports = {
 
 function selectBeauty() {
   return {
+    id: getId(),
     age: getAge(), 
     height: getHeight(),
     weight: getWeight(),
@@ -14,7 +16,11 @@ function selectBeauty() {
     gpa: getGpa(),
     name: getName(),
     hasBoyfriend: getHasBoyfriend(),
+    hometown: getHometown(),
   };
+}
+function getId() {
+  return uuidv4();
 }
 
 function getAge() {
@@ -87,4 +93,12 @@ function getHasBoyfriend() {
   }
 
   return hasBoyfriend;
+}
+
+function getHometown(){
+  const cities = ['ChengDu', 'DaLian', 'BeiJing', 'ChongQing'];
+  const randomIndex = random(0, cities.length - 1);
+  const hometown = cities[randomIndex];
+  
+  return hometown;
 }

@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "@replit/database": "^2.0.1",
+    "axios": "^0.21.1",
+    "lodash": "^4.17.21",
+    "uuid": "^8.3.2"
   }
 }

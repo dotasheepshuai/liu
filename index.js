@@ -2,8 +2,8 @@ const { loveLetter } = require('./features/loveLetter');
 
 main();
 
-function main() {
-  loveLetter();
+async function main() {
+  await loveLetter();
 }
 
 // 选美大赛功能
@@ -25,3 +25,5 @@ function main() {
 // 用户个人偏好功能
 // 3.1：用户选择以哪些为标准，根据用户喜好从object里选择属性属性。再根据属性写情书。
 // 问题：怎么只给没有男朋友的发情书？
+
+// Task 3.1 populateDatabase
